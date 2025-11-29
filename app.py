@@ -86,11 +86,16 @@ def generate_ai_answer(context_text, user_question):
     return completion.choices[0].message.content
 
 # --- YOUTUBE DOWNLOADER ---
+# --- YOUTUBE DOWNLOADER (STEALTH MODE) ---
 def process_youtube_url(url):
     ydl_opts = {
         'format': 'best[ext=mp4]',
         'outtmpl': 'data/%(id)s.%(ext)s',
         'noplaylist': True,
+        # 1. Pretend to be a real browser
+        'user_agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/120.0.0.0 Safari/537.36',
+        # 2. Use Android Client (often less restricted than Web)
+        'extractor_args': {'youtube': {'player_client': ['android', 'web']}},
     }
     with yt_dlp.YoutubeDL(ydl_opts) as ydl:
         info = ydl.extract_info(url, download=True)
