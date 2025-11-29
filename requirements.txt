@@ -1,0 +1,11 @@
+streamlit
+streamlit-lottie
+requests
+chromadb
+sentence-transformers
+openai-whisper
+yt-dlp
+groq
+python-dotenv
+numpy
+torch

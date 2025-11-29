@@ -1,0 +1,54 @@
+/* Force Dark Theme & Apple-like Font */
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;600&display=swap');
+
+html, body, [class*="css"] {
+    font-family: 'Inter', sans-serif;
+}
+
+/* The Main Background */
+.stApp {
+    background-color: #0E1117;
+}
+
+/* Glassmorphism Search Bar */
+.stTextInput > div > div > input {
+    background-color: #262730;
+    color: #ffffff;
+    border-radius: 12px;
+    border: 1px solid #3b3b3b;
+    padding: 10px;
+}
+
+/* Custom "Gradient" Button */
+.stButton > button {
+    background: linear-gradient(90deg, #FF4B4B 0%, #FF914D 100%);
+    color: white;
+    border-radius: 12px;
+    border: none;
+    font-weight: 600;
+    padding: 0.5rem 2rem;
+    transition: all 0.3s ease;
+}
+
+.stButton > button:hover {
+    transform: scale(1.02);
+    box-shadow: 0 4px 15px rgba(255, 75, 75, 0.4);
+}
+
+/* Clean Cards for Results */
+.result-card {
+    background-color: #1E1E1E;
+    padding: 20px;
+    border-radius: 15px;
+    border: 1px solid #333;
+    margin-bottom: 15px;
+    transition: transform 0.2s;
+}
+
+.result-card:hover {
+    transform: translateY(-2px);
+    border-color: #FF4B4B;
+}
+
+/* Remove default Streamlit Header */
+header {visibility: hidden;}
